@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        h1 {
+            color: red;
+        }
+
+        p {
+            color: red;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .boxes{
+            color: red;
+        }    
+
+        #box1 {
+            color: red;
+        }
+
+        /* .boxess{
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+        } */
+
+        .change {
+            background: lightblue;
+            color: red ;
+        }
+    </style>
+
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <h1 class="change">Muhammad Umar Saleh</h1>
+
+    <p class="p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, exercitationem libero mollitia quasi velit, nemo non tempora ipsum aperiam facilis porro reprehenderit asperiores quae hic totam cumque minus eum accusantium.</p>
+
+    <div id="box1">Yang kepala</div>
+
+    <br>
+    <div class="boxess">
+        <div class="boxes">Baris Pertama</div>
+        <div class="boxes">Baris Kedua</div>
+        <div class="boxes">Baris Ketiga</div>
+        <div class="boxes">Baris Keempat</div>
+        <div class="boxes">Baris Kelima</div>
+    </div>
+        
+    <form>
+        <input type="text" id="inputText">         
+        <input type="submit">         
+    </form>
+
+
+    <script>
+        // memastikan file sudah diload dengan sempurna
+        $(document).ready(function(){
+            $('h1').css('color', 'black');
+            $('#box1').css('color', 'black');
+            $('.boxes').css('color', 'black');
+
+            $('.boxes:first').css('color', 'blue');
+            $('.boxes:last').css('color', 'green');
+            $('.boxes:eq(3)').css('font-style', 'italic');
+
+            // EVENT (jenis kejadian ketika diberikan trigger)
+            $('h1').click(function(){
+                // $('h1').css('color', 'white');
+                // $('.boxes').css('font-size', '100px');
+
+                // menambahkan lebih dari satu style css
+                // $('h1').css({
+                //     'color' : 'aqua',
+                //     'fontSize' : '20px',
+                //     'backgroundColor' : 'yellow'
+                // });
+
+                // MENAMBAH DAN MENGHAPUS CLASS
+                    // $('h1').addClass('change'); 
+                    // $('h1').removeClass('change'); 
+                    $('h1').toggleClass('change'); 
+
+
+            });
+
+            // $('h1').mouseenter(function(){
+            //     $('h1').css('color', 'white');
+            //     $('.boxes').css('font-size', '100px');
+            // });
+
+            // $('h1').mouseleave(function(){
+            //     $('h1').css('color', 'black');
+            //     $('.boxes').css('font-size', '20px');
+            // });
+
+            $('p').mouseenter(function(){
+                $('p').css('color', 'yellow');
+            });
+
+            $('p').mouseleave(function(){
+                $('p').css('color','brown');
+            });
+
+            $('form').submit(function(){
+                // alert($('#inputText').val());
+                var tulisan = $('#inputText').val();
+                $('h1').text(  tulisan );
+
+                // .html()
+                // mencegah sifat 
+                event.preventDefault();
+            });
+
+            // menambah dan menghapus elemen
+            // append prepend / after before
+            $('.boxess').before('<div>Halo</div>');
+
+            // menghapus
+            // remove dan empty
+            // $('.boxess').empty();
+
+
+
+
+
+
+
+        });
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- $(document).ready(function(){
+    $('h1').css('color', 'green');
+    $('#box1').css('color', 'blue');
+    $('.boxes').css('color', 'blue');
+
+    $('.boxes:first').css('color', 'red');
+    $('.boxes:last').css('color', 'aqua');
+    $('.boxes:eq(3)').css('color', 'red');
+
+// event
+$('p').click(function(){
+    $('p').css('color', 'black');
+});
+
+
+$('p').mouseenter(function(){
+    $('p').css('color', 'yellow');
+});
+
+
+$('p').mouseleave(function(){
+    $('p').css('color', 'green');
+});
+
+$('.boxes').mouseenter(function(){
+    $(this).css('color', 'aqua');
+});
+    
+}); -->

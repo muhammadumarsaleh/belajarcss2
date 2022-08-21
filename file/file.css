@@ -1,0 +1,32 @@
+body{
+    font-family: arial;
+}
+
+h1, h2 {
+    color: green;
+}
+
+
+ul li a {
+    color: orange;
+}
+
+ol li a {
+    color: red;
+}
+
+#card {
+    font-weight: bold;
+}
+
+.card {
+    color: blue;
+}
+
+.cetak-tebal {
+    font-variant: small-caps;
+}
+
+p.cetak-tebal{
+    font-family: Arial, Helvetica, sans-serif;
+}
